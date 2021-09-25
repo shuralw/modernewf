@@ -8,8 +8,14 @@ let table = renderTable(todoList);
 document.getElementById("target").appendChild(table);
 
 function renderTable(todos) {
+
+    var elem = document.getElementById("todotable");
+    if (elem != null) {
+        elem.parentNode.removeChild(elem);
+    }
   
   let table = document.createElement("table");
+  table.id = "todotable";
   
   let header = table.createTHead().insertRow();
   let headings = ["Titel", "Termin", "Aktion"];
@@ -51,8 +57,13 @@ function renderTable(todos) {
   return table;
 }
 
+
 function addTodo() {
-  
+    // Add new Array Element
+    todoList.push({id:'123',title:'',deadline:'01.01.1970',status:''});
+    console.log(todoList);
+    renderTable(todoList);
+    document.getElementById("target").appendChild(renderTable(todoList));
 }
 
 
@@ -60,3 +71,6 @@ function addTodo() {
 function saveToDo(todo) {
   
 }
+
+
+
