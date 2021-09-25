@@ -1,6 +1,7 @@
 let todoList = [
     { id: "4711", title: "Probeklausur erstellen", deadline: "14.06.2019", "status": "open" },
-  { id: "4712", title: "Klausur erstellen", deadline: "01.07.2019", "status": "open" }
+  { id: "4712", title: "Klausur erstellen", deadline: "01.07.2019", "status": "open" },
+  { id: "4712", title: "nice  erstellen", deadline: "01.07.2019", "status": "open" }
 ];
 
 let table = renderTable(todoList);
@@ -35,11 +36,17 @@ function renderTable(todos) {
       deadlineInput.value = todo.deadline;
       deadline.appendChild(deadlineInput);
       
-      let action = row.insertCell();
-      let saveBtn = document.createElement("button");
-      saveBtn.innerHTML = "Speichern";
-      action.appendChild(saveBtn);
-  }
+      let actionDone = row.insertCell();
+      let saveBtnDone = document.createElement("button");
+      saveBtnDone.innerHTML = "Done";
+      actionDone.appendChild(saveBtnDone);
+  
+      let actionEdit = row.insertCell();
+      let saveBtnEdit = document.createElement("button");
+      saveBtnEdit.innerHTML = "Edit";
+      actionEdit.appendChild(saveBtnEdit);
+
+    }
   
   return table;
 }
