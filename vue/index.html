@@ -1,0 +1,31 @@
+<h1>ToDo Liste</h1>
+<div id="app">
+    <form id="form">
+        <!-- v-on:submit="savetodo" -->
+        <table>
+            <tr v-for="(todo, index) in todos">
+                <th scope="row">{{ todo.id }}</th>
+                <td><input :value="todo.title"></input></td>
+                <td><input :value="todo.deadline"></input></td>
+                <td><input :value="todo.status"></input></td>
+                <td><input type="button" value="save" v-on:click="save(todo, index)"></td>
+            </tr>
+        </table>
+        <!-- <customer v-model="todo.customer">
+
+        </customer>
+        <choice v-model="todo.choice"> </choice>
+        <lieferzeit v-model="todo.lieferzeit">
+        </lieferzeit>
+        <p>
+            <label for="instructions">Sonderwünsche: </label> <br />
+                    <textarea id="instructions" name="   instructions" rows="3"
+                        v-model="todo.    instructions"> </textarea>
+        </p>
+
+        <input type="submit" name="submit" value="Daten speichern" />
+        <input type="submit" v-on:click="canceltodo" value="Abbrechen" /> -->
+    </form>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
